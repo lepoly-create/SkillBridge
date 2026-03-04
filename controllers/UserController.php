@@ -4,4 +4,4 @@ class UserController {
 		require __DIR__ . '/../views/users/profile.php';
 	}
 }
-?>
+

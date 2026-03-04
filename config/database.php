@@ -28,6 +28,11 @@ class Database {
         }
     }
 
+    /**Ce bout de code permettra d'éviter de récréer une conexion sql à chaque requete
+     * Centralise la config de connexion
+     * Verifie aussi que les extensions pdo et pdo_pgsql sont actives avant de se connecter
+     * 
+     */
     public static function getInstance() {
         if (self::$instance === null) {
             self::$instance = new Database();
@@ -35,4 +40,3 @@ class Database {
         return self::$instance->pdo;
     }
 }
-?>

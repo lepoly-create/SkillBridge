@@ -4,4 +4,3 @@ class HomeController {
         require __DIR__ . '/../views/home.php';
     }
 }
-?>

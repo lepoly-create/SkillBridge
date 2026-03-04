@@ -15,7 +15,7 @@ class AuthController {
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
 
-            $userModel = new User();
+            $userModel = new \User();
             $user = $userModel->findByEmail($email);
 
             if ($user && password_verify($password, $user['mot_de_passe'])) {
@@ -29,7 +29,7 @@ class AuthController {
             }
         }
     }
-
+    // permet d'afficher le formulaire d'inscription
     public function register() {
         require __DIR__ . '/../views/auth/register.php';
     }
@@ -44,7 +44,7 @@ class AuthController {
             $password = $_POST['password'] ?? '';
             $ville = $_POST['ville'] ?? '';
 
-            $userModel = new User();
+            $userModel = new \User();
             if ($userModel->findByEmail($email)) {
                 $error = "Cet email est déjà utilisé";
                 require __DIR__ . '/../views/auth/register.php';
@@ -66,8 +66,7 @@ class AuthController {
             session_start();
         }
         session_destroy();
-        header('Location: ' . url());
+        header('Location: ' . url('home'));
         exit;
     }
 }
-?>

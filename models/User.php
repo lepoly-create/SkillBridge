@@ -5,7 +5,7 @@ class User {
     private $pdo;
 
     public function __construct() {
-        $this->pdo = Database::getInstance();
+        $this->pdo = \Database::getInstance();
     }
 
     public function findByEmail($email) {
@@ -20,6 +20,4 @@ class User {
         return $stmt->execute([$nom, $email, $hash, $ville]);
     }
 
-    // Ajoute d'autres méthodes si besoin (getById, update, etc.)
 }
-?>

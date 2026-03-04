@@ -4,4 +4,4 @@ class AnnonceController {
 		require __DIR__ . '/../views/annonces/index.php';
 	}
 }
-?>
+

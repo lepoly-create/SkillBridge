@@ -2,7 +2,7 @@
 session_start();
 
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
-$scriptDir = rtrim($scriptDir, '/');
+$scriptDir = rtrim($scriptDir, '/');// retire un '/'éventuel pour eviter les doubles '//
 $baseUrl = preg_replace('#/public$#', '', $scriptDir);
 $baseUrl = $baseUrl ?: '';
 

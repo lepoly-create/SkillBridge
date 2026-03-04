@@ -4,4 +4,4 @@ class MessageController {
 		require __DIR__ . '/../views/messages/index.php';
 	}
 }
-?>
+
